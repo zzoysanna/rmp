@@ -1,0 +1,24 @@
+@import '../../styles/vars';
+
+.radio-buttons {
+  button {
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    border: 0;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    font-size: inherit;
+    background: #3b3b3b;
+    color: @text;
+    &:first-of-type {
+      border-radius: 5px 0 0 5px;
+    }
+    &:last-of-type {
+      border-radius: 0 5px 5px 0;
+    }
+    &.active {
+      background: @accent;
+    }
+  }
+}

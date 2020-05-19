@@ -1,13 +1,57 @@
+@import 'vars';
+
 body {
   font-family: Verdana;
+  margin: 0;
+  padding: 0;
+  background: @background;
+  font-size: 16px;
 }
-h1 {
-  text-transform: uppercase;
-  color: crimson;
+
+.layout-inner {
+  padding: 0 32px;
+  max-width: @max-width;
+  margin: 0 auto;
 }
-h3 {
-  color: lightcoral;
+
+.logo {
+  color: @accent;
 }
-.blue-line {
-  border: 1px solid darkblue;
+
+header {
+  height: @header-height;
+  line-height: @header-height;
+  .layout-inner();
+}
+
+footer {
+  background: @lightgray;
+  height: @header-height;
+  text-align: center;
+  line-height: @header-height;
+}
+
+.bottom {
+  .layout-inner();
+}
+.top {
+  min-height: 250px;
+  background: #000;
+  margin-top: -@header-height;
+  padding: @header-height 0;
+}
+
+.middle {
+  background: @lightgray;
+  height: @header-height;
+  .layout-inner {
+    display: flex;
+    line-height: @header-height;
+    color: @text;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .search-result {
+    margin: 0;
+  }
 }

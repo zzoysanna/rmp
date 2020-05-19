@@ -1,0 +1,48 @@
+@import '../../styles/vars';
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 20px;
+  &-header {
+    display: flex;
+    align-items: center;
+    h1 {
+      font-weight: 400;
+      font-size: 30px;
+      margin: 0 20px 0 0;
+    }
+  }
+  &-genre {
+    margin: 5px 0;
+  }
+  &-rating {
+    border: 1px solid #fff;
+    border-radius: 100%;
+    color: green;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+  }
+  &-image {
+    width: 260px;
+    margin-right: 50px;
+  }
+  &-description {
+    color: @text;
+  }
+  &-timing {
+    display: flex;
+    padding: 20px 0 10px;
+    p {
+      font-size: 12px;
+      margin-right: 20px;
+    }
+    span {
+      color: @accent;
+      font-size: 18px;
+
+    }
+  }
+}
