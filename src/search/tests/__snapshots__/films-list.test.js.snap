@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmsList should be render empty list correctly 1`] = `ShallowWrapper {}`;
+
+exports[`FilmsList should be render list correctly 1`] = `ShallowWrapper {}`;
