@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import cn from 'classnames';
 import './styles/radiobuttons.less';
 
 export default class RadioButtons extends Component {
@@ -6,7 +7,7 @@ export default class RadioButtons extends Component {
 		super(props);
 		this.state = {
 			active: this.props.active,
-		}
+		};
 	}
 
 	setOption(option) {
@@ -27,14 +28,14 @@ export default class RadioButtons extends Component {
 					return (
 						<button
 							key={i}
-							className={active === option ? 'active' : ''}
+							className={cn({'active': active === option})}
 							onClick={this.setOption.bind(this, option)}
 						>
 							{option}
 						</button>
-					)
+					);
 				})}
 			</div>
-		)
+		);
 	}
 }

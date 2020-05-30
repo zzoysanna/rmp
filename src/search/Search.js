@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Filter from "../common/Filter";
+import Filter from '../common/Filter';
 import './styles/search.less';
 
 export default class Search extends Component {
@@ -10,8 +10,6 @@ export default class Search extends Component {
 			searchBy: 'title',
 		};
 		this.onInputChange = this.onInputChange.bind(this);
-		this.onSubmit = this.onSubmit.bind(this);
-		this.onChangeSearchType = this.onChangeSearchType.bind(this);
 	}
 
 	onInputChange(event) {
@@ -38,13 +36,13 @@ export default class Search extends Component {
 				<h1>Find your movie</h1>
 				<div className="input-section">
 					<input type="text" className="text" value={this.state.query} onChange={this.onInputChange}/>
-					<button disabled={!isValidQuery} onClick={this.onSubmit}>Search</button>
+					<button disabled={!isValidQuery} onClick={() => this.onSubmit()}>Search</button>
 				</div>
 				<Filter
 					title="search by"
 					options={['title', 'genre']}
 					active={this.state.searchBy}
-					onChangeOption={this.onChangeSearchType}
+					onChangeOption={(type) => this.onChangeSearchType(type)}
 				/>
 			</div>
 		);

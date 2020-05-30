@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import './styles/film-info.less';
 
 export default class FilmInfo extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		const {
 			title,
@@ -32,6 +28,6 @@ export default class FilmInfo extends Component {
 					<div>{overview}</div>
 				</div>
 			</div>
-		)
+		);
 	}
 }

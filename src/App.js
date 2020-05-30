@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import FilmsList from './search/FilmsList';
 import Filter from './common/Filter';
-import Search from "./search/Search";
-import FilmInfo from "./film/FilmInfo";
-import ErrorBoundary from "./common/ErrorBoundary";
+import Search from './search/Search';
+import FilmInfo from './film/FilmInfo';
+import ErrorBoundary from './common/ErrorBoundary';
 
 const films = [
 	{
@@ -62,7 +62,7 @@ const SearchResults = (props) => <p className="search-result">{props.number} mov
 export default class App extends Component {
 
 	onChangeFilmsSort(type) {
-		console.log(`sort by ${type}`)
+		console.log(`sort by ${type}`);
 	}
 
 	render() {
@@ -75,7 +75,7 @@ export default class App extends Component {
 				<section className="top">
 					<div className="layout-inner">
 						<Search />
-						{/*<FilmInfo film={films[0]}/>*/}
+						<FilmInfo film={films[0]}/>
 					</div>
 				</section>
 				<section className="middle">
@@ -97,6 +97,6 @@ export default class App extends Component {
 					<Logo />
 				</footer>
 			</ErrorBoundary>
-		)
+		);
 	}
 }

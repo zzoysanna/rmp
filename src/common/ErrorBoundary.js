@@ -7,7 +7,7 @@ export default class ErrorBoundary extends Component {
 		this.state = {hasError: false};
 	}
 
-	static getDerivedStateFromError(error) {
+	static getDerivedStateFromError() {
 		return { hasError: true };
 	}
 
@@ -18,7 +18,7 @@ export default class ErrorBoundary extends Component {
 					<img src="https://miro.medium.com/max/800/1*cLOskwDOJD2FWB9xbYF7aQ.gif" alt="have a break"/>
 					<h1>Sorry, something went wrong</h1>
 				</div>
-			)
+			);
 		}
 
 		return this.props.children;

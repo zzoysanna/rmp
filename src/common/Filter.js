@@ -3,11 +3,6 @@ import RadioButtons from './RadioButtons';
 import './styles/filter.less';
 
 export default class Filter extends Component {
-	constructor(props) {
-		super(props);
-		this.onChangeType = this.onChangeType.bind(this);
-	}
-
 	onChangeType(type) {
 		typeof this.props.onChangeOption === 'function' && this.props.onChangeOption(type);
 	}
@@ -17,8 +12,8 @@ export default class Filter extends Component {
 		return (
 			<div className="filter">
 				<span className="filter-title">{title}</span>
-				<RadioButtons options={options} active={active} onChange={this.onChangeType}/>
+				<RadioButtons options={options} active={active} onChange={(type) => this.onChangeType(type)}/>
 			</div>
-		)
+		);
 	}
 }

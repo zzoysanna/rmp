@@ -16,6 +16,7 @@ module.exports =  {
         extensions: ['.js', '.less'],
         alias: {
             '@': path.join(__dirname, 'src'),
+            'styles': path.resolve(__dirname, 'src/styles'),
         }
     },
     optimization: {
@@ -28,7 +29,7 @@ module.exports =  {
             {
                 test: /\.js/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                use: ['babel-loader', 'eslint-loader'],
             }
         ]
     },
