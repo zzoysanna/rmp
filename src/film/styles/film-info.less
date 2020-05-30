@@ -26,11 +26,17 @@
     text-align: center;
   }
   &-image {
-    width: 260px;
+    flex: 0 0 260px;
     margin-right: 50px;
+    padding-top: 40%;
+    background-size: contain;
+    background-color: rgba(255,255,255,0.2);
+    background-repeat: no-repeat;
+    font-size: 0;
   }
   &-description {
     color: @text;
+    flex-grow: 1;
   }
   &-timing {
     display: flex;

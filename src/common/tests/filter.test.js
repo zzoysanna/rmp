@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Filter from "../Filter";
-import RadioButtons from "../RadioButtons";
+import Filter from '../Filter';
+import RadioButtons from '../RadioButtons';
 
 describe('Filter', () => {
 

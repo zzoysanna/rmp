@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
-import FilmsList from "../FilmsList";
+import { shallow } from 'enzyme';
+import FilmsList from '../FilmsList';
 
 const film1 = {
 	id: 1,

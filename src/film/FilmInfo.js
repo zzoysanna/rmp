@@ -14,7 +14,7 @@ export default class FilmInfo extends Component {
 		} = this.props.film;
 		return (
 			<div className="info">
-				<img src={poster_path} alt={title} className="info-image"/>
+				<div style={{ backgroundImage: `url(${poster_path})` }} className="info-image">&nbsp;</div>
 				<div className="info-description">
 					<div className="info-header">
 						<h1>{title}</h1>

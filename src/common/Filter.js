@@ -4,7 +4,8 @@ import './styles/filter.less';
 
 export default class Filter extends Component {
 	onChangeType(type) {
-		typeof this.props.onChangeOption === 'function' && this.props.onChangeOption(type);
+		const {onChangeOption} = this.props;
+		typeof onChangeOption === 'function' && onChangeOption(type);
 	}
 
 	render() {
@@ -12,7 +13,7 @@ export default class Filter extends Component {
 		return (
 			<div className="filter">
 				<span className="filter-title">{title}</span>
-				<RadioButtons options={options} active={active} onChange={(type) => this.onChangeType(type)}/>
+				<RadioButtons options={options} active={options[active]} onChange={(type) => this.onChangeType(type)}/>
 			</div>
 		);
 	}

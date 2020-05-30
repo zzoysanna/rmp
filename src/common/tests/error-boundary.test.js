@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
-import ErrorBoundary from "../ErrorBoundary";
+import { shallow } from 'enzyme';
+import ErrorBoundary from '../ErrorBoundary';
 
 describe('ErrorBoundary', () => {
 

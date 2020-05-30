@@ -4,17 +4,18 @@ import './styles/film-list.less';
 
 export default class FilmList extends Component {
 	render() {
-		const {list} = this.props;
+		const {list, pending} = this.props;
 		return (
 			<>
-				{!!list.length && (
+				{(!!list.length && !pending) && (
 					<div className="film-list">
 						{list.map((film, i) => {
 							return <FilmPreview key={i} film={film}/>;
 						})}
 					</div>
 				)}
-				{!list.length && <div className="no-films">No films found</div>}
+				{(!list.length && !pending) && <div className="no-films">No films found</div>}
+				{pending && <div className="no-films">Searching...</div>}
 			</>
 		);
 	}
