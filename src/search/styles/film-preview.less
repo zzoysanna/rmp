@@ -1,0 +1,37 @@
+@import 'styles/vars';
+
+.film {
+  color: @text;
+  flex: 0 0 30%;
+  margin-bottom: 40px;
+  cursor: pointer;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    p {
+      margin: 0;
+    }
+  }
+  .year {
+    display: block;
+    border: 1px solid @lightgray;
+    padding: 5px 10px;
+    font-size: 80%;
+    border-radius: 3px;
+  }
+  .title {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 110%;
+  }
+  .genre {
+    font-size: 90%;
+  }
+}
