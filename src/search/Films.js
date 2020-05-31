@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { config } from '../config';
 import FilmsList from './FilmsList';
@@ -7,7 +7,7 @@ import * as actions from '../store/actions';
 
 export class Films extends Component {
 	render() {
-		const {films, sortType, onChangeSort, pending} = this.props;
+		const { films, sortType, onChangeSort, pending } = this.props;
 		return(
 			<>
 				<section className="middle">

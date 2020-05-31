@@ -4,7 +4,7 @@ import './styles/film-list.less';
 
 export default class FilmList extends Component {
 	render() {
-		const {list, pending} = this.props;
+		const { list, pending } = this.props;
 		return (
 			<>
 				{(!!list.length && !pending) && (

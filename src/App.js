@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Search from './search/Search';
 // import FilmInfo from './film/FilmInfo';
 import Films from './search/Films';

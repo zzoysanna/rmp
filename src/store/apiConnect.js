@@ -5,8 +5,8 @@ import {
 	fetchMovieError,
 	fetchMoviePending,
 	fetchMovieSuccess
-} from './store/actions';
-import {config} from './config';
+} from './actions';
+import { config } from '../config';
 
 export const searchFilms = (query, searchType, sortType) => {
 	const search = config.searchOptionsAPI[searchType];
@@ -20,16 +20,16 @@ export const getFilms = (params) => {
 	if(params) {
 		url += params;
 	}
+
 	return dispatch => {
 		dispatch(fetchFilmsPending());
-		fetch(url)
+		return fetch(url)
 			.then(res => res.json())
 			.then(res => {
 				if(res.error) {
 					throw(res.error);
 				}
 				dispatch(fetchFilmsSuccess(res.data));
-				return res.data;
 			})
 			.catch(error => dispatch(fetchFilmsError(error)));
 	};
@@ -38,14 +38,13 @@ export const getFilms = (params) => {
 export const getMovie = (id) => {
 	return dispatch => {
 		dispatch(fetchMoviePending());
-		fetch(`${config.apiUrl}movies/${id}`)
+		return fetch(`${config.apiUrl}movies/${id}`)
 			.then(res => res.json())
 			.then(res => {
 				if(res.error) {
 					throw(res.error);
 				}
 				dispatch(fetchMovieSuccess(res.data));
-				return res.data;
 			})
 			.catch(error => dispatch(fetchMovieError(error)));
 	};

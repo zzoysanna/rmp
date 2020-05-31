@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './styles/error-boundary.less';
 
 export default class ErrorBoundary extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {hasError: false};
+		this.state = { hasError: false };
 	}
 
 	static getDerivedStateFromError() {

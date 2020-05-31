@@ -1,10 +1,12 @@
-import * as actions from './actions';
-import { CHANGE_SORT } from './actions';
-import { CHANGE_SEARCH_TYPE } from './actions';
-import { FETCH_FILMS_SUCCESS } from './actions';
-import { FETCH_FILMS_ERROR } from './actions';
-import { FETCH_FILMS_PENDING } from './actions';
-import { FETCH_MOVIE_SUCCESS } from './actions';
+import * as actions from '../actions';
+import {
+	CHANGE_SORT,
+	CHANGE_SEARCH_TYPE,
+	FETCH_FILMS_SUCCESS,
+	FETCH_FILMS_ERROR,
+	FETCH_FILMS_PENDING,
+	FETCH_MOVIE_SUCCESS
+} from '../actions';
 
 describe('actions', () => {
 	it('should return actions', () => {

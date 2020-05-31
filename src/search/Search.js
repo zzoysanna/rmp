@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Filter from '../common/Filter';
 import './styles/search.less';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions';
-import {config} from '../config';
-import { searchFilms } from '../apiConnect';
+import { config } from '../config';
+import { searchFilms } from '../store/apiConnect';
 
 export class Search extends Component {
 	constructor(props) {
@@ -29,7 +29,7 @@ export class Search extends Component {
 			onChangeSearchType,
 			onSearch
 		} = this.props;
-		const {query} = this.state;
+		const { query } = this.state;
 		const isValidQuery = query.length >= 3;
 		return(
 			<div className="search">

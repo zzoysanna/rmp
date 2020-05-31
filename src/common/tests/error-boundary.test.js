@@ -16,7 +16,7 @@ describe('ErrorBoundary', () => {
 	it('should be render if has errors', () => {
 		const component = shallow(<ErrorBoundary />);
 		const instance = component.instance();
-		instance.setState({hasError: true});
+		instance.setState({ hasError: true });
 		expect(instance.state['hasError']).toBeTruthy();
 		expect(component).toMatchSnapshot();
 	});

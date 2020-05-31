@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './styles/film-info.less';
 
 export default class FilmInfo extends Component {

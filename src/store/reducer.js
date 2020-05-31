@@ -41,13 +41,13 @@ export default function reducer(state = initialState, action) {
 		};
 	case CHANGE_SEARCH_TYPE:
 		const newSearchType = Number(!state.searchType);
-		return {...state, searchType: newSearchType};
+		return { ...state, searchType: newSearchType };
 	case FETCH_FILMS_PENDING:
-		return {...state, pending: true};
+		return { ...state, pending: true };
 	case FETCH_FILMS_SUCCESS:
-		return {...state, pending: false, films: action.payload};
+		return { ...state, pending: false, films: action.payload };
 	case FETCH_FILMS_ERROR:
-		return {...state, pending: false, error: action.error};
+		return { ...state, pending: false, error: action.error };
 	default:
 		return state;
 	}

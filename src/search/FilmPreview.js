@@ -3,7 +3,7 @@ import './styles/film-preview.less';
 
 export default class FilmPreview extends Component {
 	goToFilm() {
-		const {id} = this.props.film;
+		const { id } = this.props.film;
 		console.log(`go to film id=${id}`);
 	}
 
@@ -13,7 +13,7 @@ export default class FilmPreview extends Component {
 	}
 
 	render() {
-		const {title, release_date, genres, poster_path} = this.props.film;
+		const { title, release_date, genres, poster_path } = this.props.film;
 		return (
 			<div className="film" onClick={() => this.goToFilm()}>
 				<div style={{ backgroundImage: `url(${poster_path})` }} className="poster">&nbsp;</div>
