@@ -1,6 +1,7 @@
 
 export const CHANGE_SORT = 'CHANGE_SORT';
 export const CHANGE_SEARCH_TYPE = 'CHANGE_SEARCH_TYPE';
+export const SET_CURRENT_FILM = 'SET_CURRENT_FILM';
 
 export const FETCH_FILMS_PENDING = 'FETCH_FILMS_PENDING';
 export const FETCH_FILMS_SUCCESS = 'FETCH_FILMS_SUCCESS';
@@ -21,6 +22,13 @@ export function changeSearchType() {
 	return {
 		type: CHANGE_SEARCH_TYPE
 	};
+}
+
+export function setCurrentFilm(id) {
+	return {
+		type: SET_CURRENT_FILM,
+		payload: id,
+	}
 }
 
 export function fetchFilmsPending() {

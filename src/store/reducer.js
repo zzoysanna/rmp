@@ -4,6 +4,7 @@ import {
 	FETCH_FILMS_PENDING,
 	FETCH_FILMS_SUCCESS,
 	FETCH_FILMS_ERROR,
+	SET_CURRENT_FILM
 } from './actions';
 
 const initialState = {
@@ -42,6 +43,9 @@ export default function reducer(state = initialState, action) {
 	case CHANGE_SEARCH_TYPE:
 		const newSearchType = Number(!state.searchType);
 		return { ...state, searchType: newSearchType };
+	case SET_CURRENT_FILM:
+		let film = [...state.films].find(film => film.id ===  action.payload);
+		return {...state, currentFilm: film};
 	case FETCH_FILMS_PENDING:
 		return { ...state, pending: true };
 	case FETCH_FILMS_SUCCESS:

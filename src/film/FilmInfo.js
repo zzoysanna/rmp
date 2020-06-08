@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import './styles/film-info.less';
+import { connect } from "react-redux";
 
-export default class FilmInfo extends Component {
+class FilmInfo extends Component {
+
+	prepareDate(date) {
+		const releaseDate = new Date(date);
+		return releaseDate.getFullYear();
+	}
+
 	render() {
 		const {
 			title,
@@ -12,6 +19,7 @@ export default class FilmInfo extends Component {
 			runtime,
 			vote_average
 		} = this.props.film;
+		const {id, film} = this.props;
 		return (
 			<div className="info">
 				<div style={{ backgroundImage: `url(${poster_path})` }} className="info-image">&nbsp;</div>
@@ -22,7 +30,7 @@ export default class FilmInfo extends Component {
 					</div>
 					<p className="info-genre">{genres.join('&')}</p>
 					<div className="info-timing">
-						<p><span>{release_date}</span>year</p>
+						<p><span>{this.prepareDate(release_date)}</span>year</p>
 						<p><span>{runtime}</span>min</p>
 					</div>
 					<div>{overview}</div>
@@ -31,3 +39,16 @@ export default class FilmInfo extends Component {
 		);
 	}
 }
+
+const mapStateToProps = (state, ownProps) => {
+	return {
+		film: state.currentFilm,
+		id: ownProps.match.params.id
+	}
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilmInfo);
