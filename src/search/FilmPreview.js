@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './styles/film-preview.less';
-import { Link } from "react-router-dom";
-import * as actions from "../store/actions";
-import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+import * as actions from '../store/actions';
+import { connect } from 'react-redux';
 
 class FilmPreview extends Component {
 	prepareDate(date) {
@@ -10,11 +10,15 @@ class FilmPreview extends Component {
 		return releaseDate.getFullYear();
 	}
 
+	onFilmClick(id) {
+		window.scroll(0,0);
+		this.props.onSetCurrentFilm(id);
+	}
+
 	render() {
 		const { title, release_date, genres, poster_path, id } = this.props.film;
-		const {onSetCurrentFilm} = this.props;
 		return (
-			<Link className="film" to={`/film/${id}`} onClick={() => onSetCurrentFilm(id)}>
+			<Link className="film" to={`/film/${id}`} onClick={() => this.onFilmClick(id)}>
 				<div style={{ backgroundImage: `url(${poster_path})` }} className="poster">&nbsp;</div>
 				<div className="info">
 					<p>
@@ -28,8 +32,8 @@ class FilmPreview extends Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	return {}
+const mapStateToProps = () => {
+	return {};
 };
 
 const mapDispatchToProps = (dispatch) => {

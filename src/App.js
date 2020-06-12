@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Search from './search/Search';
 import Films from './search/Films';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import FilmInfo from "./film/FilmInfo";
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import FilmInfo from './film/FilmInfo';
+import { NotFoundPage } from './common/NotFound';
 
 export default class App extends Component {
 
@@ -31,10 +32,3 @@ export default class App extends Component {
 }
 
 const Logo = () => <Link to="/" className="logo"><strong>netflix</strong>roulette</Link>;
-
-const NotFoundPage = () => (
-	<div className="not-found">
-		<h3>Page not found</h3>
-		<p>But look - there are some films for you!</p>
-	</div>
-);

@@ -28,7 +28,7 @@ export function setCurrentFilm(id) {
 	return {
 		type: SET_CURRENT_FILM,
 		payload: id,
-	}
+	};
 }
 
 export function fetchFilmsPending() {

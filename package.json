@@ -35,7 +35,8 @@
     "redux": "^4.0.5",
     "redux-mock-store": "^1.5.4",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "websocket-extensions": "^0.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

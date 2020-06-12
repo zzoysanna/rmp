@@ -14,7 +14,10 @@ export default class FilmList extends Component {
 						})}
 					</div>
 				)}
-				{(!list.length && !pending) && <div className="no-films">No films found</div>}
+				{(!list.length && !pending) && <div className="no-films">
+					No films found.<br />
+					Try to change search type.
+				</div>}
 				{pending && <div className="no-films">Searching...</div>}
 			</>
 		);

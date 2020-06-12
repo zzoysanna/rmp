@@ -10,24 +10,36 @@ export class Search extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			query: '',
+			query: this.props.match.params.query || '',
 		};
 		this.onInputChange = this.onInputChange.bind(this);
+	}
+
+	componentDidMount() {
+		if(this.state.query) {
+			const { query } = this.state;
+			const { searchType, sortType } = this.props;
+			this.props.onSearch(query, searchType, sortType);
+		}
 	}
 
 	onInputChange(event) {
 		this.setState({
 			query: event.target.value,
 		});
+	}
 
+	onSearchClick() {
+		const { query } = this.state;
+		const { history, searchType, sortType } = this.props;
+		history.push(`/search/${query}`);
+		this.props.onSearch(query, searchType, sortType);
 	}
 
 	render() {
 		const {
 			searchType,
-			sortType,
 			onChangeSearchType,
-			onSearch
 		} = this.props;
 		const { query } = this.state;
 		const isValidQuery = query.length >= 3;
@@ -37,8 +49,9 @@ export class Search extends Component {
 				<div className="input-section">
 					<input type="text" className="text" value={query} onChange={this.onInputChange}/>
 					<button
+						type="submit"
 						disabled={!isValidQuery}
-						onClick={() => onSearch(query, searchType, sortType)}>
+						onClick={() => this.onSearchClick()}>
 						Search
 					</button>
 				</div>
