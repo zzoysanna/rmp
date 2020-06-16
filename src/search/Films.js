@@ -29,7 +29,9 @@ export class Films extends Component {
 	}
 }
 
-const SearchResults = (props) => <p className="search-result">{props.number} movies found</p>;
+const SearchResults = (props) => <p className="search-result">
+	{props.number} {props.number === 1 ? 'movie' : 'movies'} found
+</p>;
 
 const mapStateToProps = (state) => {
 	return {

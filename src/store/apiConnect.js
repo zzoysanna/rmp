@@ -44,7 +44,7 @@ export const getMovie = (id) => {
 				if(res.error) {
 					throw(res.error);
 				}
-				dispatch(fetchMovieSuccess(res.data));
+				dispatch(fetchMovieSuccess(res));
 			})
 			.catch(error => dispatch(fetchMovieError(error)));
 	};
