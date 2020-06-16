@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
-import FilmInfo from "../FilmInfo";
+import { shallow } from 'enzyme';
+import FilmInfo from '../FilmInfo';
 
 describe('FilmInfo', () => {
 	let film;
@@ -15,7 +15,7 @@ describe('FilmInfo', () => {
 			overview: 'test-description',
 			runtime: 157,
 			vote_average: 4.5,
-		}
+		};
 	});
 
 	it('should be render correctly', () => {

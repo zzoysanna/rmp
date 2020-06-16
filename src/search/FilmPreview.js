@@ -1,25 +1,46 @@
 import React, { Component } from 'react';
 import './styles/film-preview.less';
+import { Link } from 'react-router-dom';
+import * as actions from '../store/actions';
+import { connect } from 'react-redux';
 
-export default class FilmPreview extends Component {
-	goToFilm() {
-		const {id} = this.props.film;
-		console.log(`go to film id=${id}`);
+class FilmPreview extends Component {
+	prepareDate(date) {
+		const releaseDate = new Date(date);
+		return releaseDate.getFullYear();
+	}
+
+	onFilmClick(id) {
+		window.scroll(0,0);
+		this.props.onSetCurrentFilm(id);
 	}
 
 	render() {
-		const {title, release_date, genres, poster_path} = this.props.film;
+		const { title, release_date, genres, poster_path, id } = this.props.film;
 		return (
-			<div className="film" onClick={() => this.goToFilm()}>
-				<img src={poster_path} alt={title}/>
+			<Link className="film" to={`/film/${id}`} onClick={() => this.onFilmClick(id)}>
+				<div style={{ backgroundImage: `url(${poster_path})` }} className="poster">&nbsp;</div>
 				<div className="info">
 					<p>
 						<span className="title">{title}</span>
 						<span className="genre">{genres.join('&')}</span>
 					</p>
-					<span className="year">{release_date}</span>
+					<span className="year">{this.prepareDate(release_date)}</span>
 				</div>
-			</div>
+			</Link>
 		);
 	}
 }
+
+const mapStateToProps = () => {
+	return {};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		onSetCurrentFilm: (id) => dispatch(actions.setCurrentFilm(id)),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilmPreview);
+

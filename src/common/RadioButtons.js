@@ -20,15 +20,15 @@ export default class RadioButtons extends Component {
 	}
 
 	render() {
-		const {options} = this.props;
-		const {active} = this.state;
+		const { options } = this.props;
+		const { active } = this.state;
 		return (
 			<div className="radio-buttons">
 				{options.map((option, i) => {
 					return (
 						<button
 							key={i}
-							className={cn({'active': active === option})}
+							className={cn({ 'active': active === option })}
 							onClick={this.setOption.bind(this, option)}
 						>
 							{option}

@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search should be render correctly 1`] = `ShallowWrapper {}`;
+exports[`Search should be render correctly 1`] = `ReactWrapper {}`;
+
+exports[`Search should be render correctly on button click 1`] = `
+Array [
+  Object {
+    "type": "CHANGE_SEARCH_TYPE",
+  },
+]
+`;
